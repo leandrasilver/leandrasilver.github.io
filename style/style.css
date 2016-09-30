@@ -1,0 +1,682 @@
+
+/*======================Colours==========================*/
+/*=======================================================*/
+
+/*rgba(199,129,232,1) light purple*/ 
+/*rgba(160,62,207,1) purple */
+/*rgba(112,25,153,1)) dark purple*/
+/*rgba(215,217,215,1) light grey */
+/*rgba(201,197,203,1) med grey */
+/*rgba(186,172,189,1) grey */
+/*rgba(180,142,174,1) light purple*/
+/*rgba(100,110,104,1)  dark grey*/
+
+/*====================Normalize==========================*/
+/*=======================================================*/
+
+.article,aside,details,figcaption,figure,footer,header,hgroup,nav,section,summary{display:block;}audio,canvas,video{display:inline-block;}audio:not([controls]){display:none;height:0;}[hidden]{display:none;}html{font-family:sans-serif;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;}a:focus{outline:thin dotted;}a:active,a:hover{outline:0;}h1{font-size:2em;}abbr[title]{border-bottom:1px dotted;}b,strong{font-weight:700;}dfn{font-style:italic;}mark{background:#ff0;color:#000;}code,kbd,pre,samp{font-family:monospace, serif;font-size:1em;}pre{white-space:pre-wrap;word-wrap:break-word;}q{quotes:\201C \201D \2018 \2019;}small{font-size:80%;}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline;}sup{top:-.5em;}sub{bottom:-.25em;}img{border:0;}svg:not(:root){overflow:hidden;}fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em;}button,input,select,textarea{font-family:inherit;font-size:100%;margin:0;}button,input{line-height:normal;}button,html input[type=button],/* 1 */
+
+input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer;}button[disabled],input[disabled]{cursor:default;}input[type=checkbox],input[type=radio]{box-sizing:border-box;padding:0;}input[type=search]{-webkit-appearance:textfield;-moz-box-sizing:content-box;-webkit-box-sizing:content-box;box-sizing:content-box;}input[type=search]::-webkit-search-cancel-button,input[type=search]::-webkit-search-decoration{-webkit-appearance:none;}textarea{overflow:auto;vertical-align:top;}table{border-collapse:collapse;border-spacing:0;}body,figure{margin:0;}legend,button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0;}
+
+.clearfix:after {visibility: hidden; display: block; font-size: 0; content: " "; clear: both; height: 0; }
+
+* { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+
+/*====================General styles=====================*/
+/*=======================================================*/
+
+html {
+	font-size:62.5%;
+}
+
+img {
+	width:100%;
+	display: block;
+}
+
+a {
+	text-decoration:none;
+	color: inherit;
+}
+
+ul {
+	list-style: none;
+	padding-left: 0;
+}
+
+body {
+	font-size:1rem;
+	line-height: 1.5;
+	font-family:'Montserrat', sans-serif;
+}
+
+strong {
+	color: rgba(180, 142, 174, 1);
+}
+
+h1 {
+	margin-bottom: 0;
+}
+
+h2, h3, h4 {
+	font-family: 'Montserrat', sans-serif;
+	text-align:left;
+	margin:0;
+	color:rgba(100,110,104,1);
+	font-weight: 500;
+	margin-left:0;
+}
+
+	h2 {
+		font-size: 4rem;
+		text-transform: uppercase;
+		letter-spacing: 1px;
+		font-weight: bold;
+		margin-bottom:5%;
+		line-height: 1;
+	}
+
+	h3 {
+		font-size:2rem;
+		font-weight: 400;
+	}
+
+p {
+	font-size: 1.4rem;
+	font-family: "Open Sans", sans-serif;
+}
+
+section {
+	padding:5% 0;
+}
+
+button {
+	border:1px solid rgba(180, 142, 174, 0.2);
+	border-bottom: 4px double rgba(180, 142, 174, 1);
+	background-image: linear-gradient(rgba(255,255,255,0.5), rgba(255,255,255,0.5)), url(../images/pw_maze_white.png);
+	padding: 8px 20px;
+	font-size:1.4rem;
+	margin: 5px;
+
+}
+	button:hover,button:focus {
+		background: rgba(180,142,174,0.5) ;
+		border-bottom: 4px double white;
+	}
+
+	button h4 {
+		text-transform: uppercase;
+		text-align: center;
+	}
+
+.flexParent {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+
+.wrapper {
+	width: 70%;
+	max-width: 1180px;
+	margin: 0 auto;
+}
+
+/*==================Header Style Begins====================*/
+/*=========================================================*/
+
+header {
+	background-image:linear-gradient(rgba(199,129,232,0.2) 10%,rgba(255,255,255,0.9) 45%,rgba(255,255,255,0.9) 65%,rgba(255,255,255,0.7) 90%), url(../images/headerImage.jpg); /*background I stuck with*/
+	background-repeat: repeat;
+	background-size: cover;
+	height: 100vh;
+	padding-top:0;
+	position: relative;
+}
+
+	header h1 {
+		color: transparent;
+		padding-bottom: 0;
+		position:relative;
+		z-index: -100;
+	}
+
+	header h2 {
+		line-height: 1;
+		position: absolute;
+		text-align: center;
+		text-shadow: 2px 2px 2px rgba(100,110,104,0.5) ;
+		top:62%;
+	    font-size: 2rem;
+	    left: 50%;
+	    transform: translate(-50%, -50%);
+	}
+
+	nav {
+		display: flex;
+		justify-content: space-between;
+		align-content: center;
+		position: relative;
+		top:0;
+		padding:3%;
+		max-width:1200px;
+		margin:0 auto;
+	}
+
+		ul.mainNav {
+			flex-basis: 30%;
+		}
+
+		nav .logo {
+			width: 50px;
+			min-width: 50px;
+		}
+
+		ul.mainNav li {
+			align-self:center;
+			flex: 1 1 25%;
+			text-align: center;
+			text-transform: uppercase;
+			transition: all 0.3s ease-in;
+		}
+
+			ul.mainNav li:hover, ul.mainNav li:focus {
+				color: rgba(180, 142, 174, 1);
+				transform: scale(1.2,1.2);
+
+			}
+
+		ul.mainNav li a {
+			color:rgba(100,110,104,1);
+			display: inline-block;
+			font-size: 1.5rem;
+			padding:10px 25px;
+			text-shadow: 2px 2px 2px rgba(100,110,104,0.5);
+		}
+
+			ul.mainNav li a::after {
+			    background: transparent;
+			    content: '';
+			    display: block;
+			    margin: 0 auto;
+			    transition: width .5s ease;
+			    width: 0px;
+			}
+			
+			ul.mainNav li a:hover, ul.mainNav li a:focus {
+				color:rgba(180, 142, 174, 1);
+				text-shadow: 1px 1px rgba(255,255,255,1);
+
+			}
+
+			    ul.mainNav li a:hover::after, ul.mainNav li a:focus::after {
+				    border-bottom: 4px double rgba(180, 142, 174, 1);
+				    border-top:1px double white;
+				    box-shadow: 1px 1px 2px white;
+				    font-weight: 600;
+				    max-width: 90px;
+				    width: 100%;
+				}
+
+	/*========================SVG CSS==========================*/
+	/*=========================================================*/
+
+	svg {
+		background: transparent;
+		max-width: 800px;
+		min-width: 200px;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
+
+	.text {
+		font-family:'Montserrat', sans-serif;
+		font-size: 20px;
+		text-transform: uppercase;
+		text-shadow:8px 8px 20px rgba(112,25,153,0.5);
+		letter-spacing:-1px;
+	}
+
+	.text-stroke {
+		fill: transparent;
+		stroke: silver;
+		stroke-width: 1.5px;
+		stroke-dashoffset: -900;
+		stroke-dasharray: 900;
+		stroke-linecap: butt;
+		stroke-linejoin: round;
+		animation: dash 2.5s ease-in-out forwards;
+	}
+
+	.text-stroke:nth-child(2) {
+		animation-delay: .3s;
+	}
+
+	.text-stroke:nth-child(3) {
+		animation-delay: .9s;
+		stroke:rgba(180,142,172,1);
+	}
+
+	.text-stroke-2 {
+		stroke: rgba(180,142,172,1);
+		animation-delay: 1.2s;
+	}
+
+	.text-stroke-3 {
+		stroke:silver;
+		animation-delay:1.1s;
+	}
+
+	.text-stroke:nth-child(5) {
+		animation-delay: 1.5s;
+	}
+
+	.text-stroke:nth-child(6) {
+		animation-delay: 1.8s;
+	}
+
+	@keyframes dash {
+		100% {
+			stroke-dashoffset: 0;
+		}
+	}
+
+	/*End SVG CSS*/
+
+/*======Section Titles With before elements================*/
+/*=========================================================*/
+
+.sectionTitle h3 span,.sectionTitle2 h3 span {
+	display:inline-block;
+	position:relative;
+}
+
+	.sectionTitle h3 span::before {
+		content:" ";
+		display:block;
+		height:5px;
+		width:40px;
+		border-top:2px solid rgba(180, 142, 174, 1);
+		border-bottom:3px solid rgba(180, 142, 174, 1);
+		background:none;
+		position:absolute;
+		top:30%;
+		left:-50px;
+		z-index: 10;
+	}
+
+	/*for Form section vertical double bar*/
+
+	.sectionTitle2 h3 span::before {
+		content:" ";
+		display:block;
+		height:80px;
+		width:5px;
+		border-left:2px solid rgba(180, 142, 174, 1);
+		border-right:4px solid rgba(180, 142, 174, 1);
+		background:none;
+		position:absolute;
+		left:-20px;
+		bottom:10px;
+		z-index: 10;
+	}
+
+/*========================About Me==========================*/
+/*=========================================================*/
+
+section.about {
+	border-bottom: 1px solid rgba(180,142,172,0.5);
+	position: relative;
+}
+
+	section.about::after {
+		border: 2px solid rgba(180,142,172,0.5);
+		bottom: -8px;
+		content: " ";
+		left: 0;
+		position: absolute;
+		right:0;
+		z-index: 2;
+	}
+
+.aboutImage {
+	flex:1 0 40%;
+	max-width: 500px;
+	min-width: 360px;
+	padding:30px;
+	position: relative;
+	z-index: 9;
+}
+
+.aboutContent {
+	background-color: rgba(201,197,203,0.2);
+	flex:2 1 60%;
+	left:-90px;
+	padding: 30px 30px 30px 90px;
+	position: relative;
+}
+
+/*========================Skills and Icons=================*/
+/*=========================================================*/
+
+section.skills {
+	background-image: linear-gradient(rgba(255,255,255,0.5), rgba(255,255,255,0.5)), url(../images/pw_maze_white.png);
+	background-repeat: repeat;
+}
+
+	.skills .skillContent {
+		align-items:center;
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+		.skillItem {
+			background-color: white;
+			border:5px double rgba(186,172,189,0.3);
+			flex: 0 1 10%;
+			margin: 10px;
+			padding:20px;
+			min-width:200px;
+			text-align: center;
+		}
+
+			.skillItem h3 {
+				text-align: center;
+			}
+
+.devicons, .fa {
+	color: rgba(186,172,189,1);
+	display: inline-block;
+	padding: 2%;
+	text-shadow: -2px -2px 0 rgba(199, 129, 232, 0.5);
+	transition: all 0.3s ease-in;
+}
+
+.devicons, .skills .fa-wheelchair, .skills .fa-plug {
+	font-size: 60px;
+}
+
+.devicons:hover, .fa:hover, .devicons:focus, .fa:focus {
+	color: rgba(199,129,232,0.6);
+	text-shadow: 2px 2px 0 rgba(186,172,189,1);
+}
+
+/*=======================Portfolio=========================*/
+/*=========================================================*/
+section.portfolio {
+	border-bottom: 1px solid rgba(180,142,172,0.5);
+	position: relative;
+}
+
+	section.portfolio::after {
+		border: 2px solid rgba(180,142,172,0.5);
+		bottom: -8px;
+		content: " ";
+		left: 0;
+		position: absolute;
+		right:0;
+		z-index: 2;
+	}
+
+.portfolioContainer {
+	align-items: flex-start;
+	display:flex;
+	flex-direction: column;
+	margin:0 auto;
+	max-width: 800px;
+}
+
+	.portfolioItem {
+		margin: 2%;
+	}
+	
+		.portfolioImage {
+			background: url(../images/macbookImageSm2.png) no-repeat;
+			flex:1 0 auto;
+			height: 161px;
+			padding:20px;
+			width: 300px;
+		}
+
+		.portfolioContent {
+			align-self: center;
+			padding: 25px;
+			position: relative;
+		}
+
+		.portfolioItem2 .portfolioImage { 
+			order: 2;
+		}
+
+		.portfolioItem2 .portfolioContent { 
+			order: 1;
+		}
+
+		.borderLeft {
+			right:40px;
+			transition: all 0.5s ease-in;
+		}
+
+			.borderLeft::before {
+				background:none;
+				border-left:2px solid rgba(180, 142, 174, 1);
+				border-right:5px solid rgba(180, 142, 174, 1);
+				content:" ";
+				display:block;
+				height:100%;
+				left:-10px;
+				position:absolute;
+				width:7px;
+				z-index: 10;
+				top:50%;
+				transform: translateY(-50%);
+			}
+
+		.borderRight {
+			left:60px;
+			transition: all 0.5s ease-in;
+		}
+
+			.borderRight::before {
+				background:none;
+				border-left:2px solid rgba(180, 142, 174, 1);
+				border-right:5px solid rgba(180, 142, 174, 1);
+				content:" ";
+				display:block;
+				height:100%;
+				position:absolute;
+				right:10px;
+				width:7px;
+				z-index: 10;
+				top:50%;
+				transform: translateY(-50%);
+			}
+
+/*=====================Form================================*/
+/*=========================================================*/
+
+section.contact {
+	background-color: rgba(186,172,189,1);
+}
+
+.contact h2 {
+	color: white;
+	text-align: center;
+	text-shadow: 2px 2px black;
+}
+
+.contact h3 {
+	color: white;
+	left:25px;
+	padding-top:50px;
+	position: relative;
+	text-align: center;
+	text-shadow: 1px 1px rgba(0,0,0,0.5);
+}
+
+.contactForm {
+	margin: 0 auto;
+	max-width: 800px;
+}
+
+	input {
+		flex: 1 1 45%;
+		font-size: 1.4rem;
+		margin-top:10px;
+		padding: 10px;
+	}
+
+	textarea {
+		font-size: 1.4rem;
+		margin: 10px auto;
+		max-height: 300px;
+		max-width: 100%;
+		min-width: 225px;
+		padding: 10px;
+		width: 100%;
+	}
+
+	.formFlex {
+		align-items: center;
+		display: flex;
+		justify-content: space-between;
+		width: 100%; /*so people cannot drag box to the right*/
+	}
+
+	input[type=email] {
+		margin-left: 10px;
+	}
+
+	input[type=submit] {
+		background-color: rgba(156,142,159,1);
+		border:3px double white;
+		color: white;
+		display: block;
+		font-size: 2rem;
+		margin: 10px auto;
+		width: 200px;
+	}
+
+	input, textarea {
+		border:5px double rgba(186,172,189,0.3);
+		color:rgba(100,110,104,0.8);
+	}
+
+	input:focus,textarea:focus,input:hover,textarea:hover {
+		border-bottom:5px double rgba(180,142,174,1);
+		outline: rgba(180,142,174,1);
+	}
+
+	input[type=submit]:hover {
+		border-bottom:3px double rgba(180,142,174,1);
+	}
+
+/*=====================Footer=============================*/
+/*=========================================================*/
+
+footer {
+	background: url(../images/pw_maze_white.png);
+	padding-top: 40px;
+	padding-bottom: 40px;
+}
+	footer .wrapper {
+		max-width: 600px;
+	}
+
+	footer .social {
+		padding-bottom: 20px;
+	}
+	
+	footer .finalFooter p{
+		margin:0;
+		padding: 2px;
+		font-size: 10px;
+		color: grey;
+
+	}
+
+/*=====================Breakpoints=========================*/
+/*=========================================================*/
+@media all and (min-width:560px) {
+	.borderLeft:hover, .borderLeft:focus {
+		right:-20px;
+		transition: all 0.5s ease-in;
+	}
+
+	.borderRight:hover,.borderRight:focus {
+		left:-20px;
+		transition: all 0.5s ease-in;
+	}
+}
+
+@media all and (max-width: 560px) {
+
+	nav {
+		display: block;
+	}
+
+	.mainNav {
+		justify-content: flex-start;
+	}
+
+	ul.mainNav li a {
+		padding: 5px;
+	}
+
+/*About*/
+	.aboutBox {
+		display: block;
+	}
+
+	.aboutContent {
+		left:0;
+	}
+/*Skills*/
+
+/*Portfolio*/
+	.portfolioItem {
+		display: block;
+	}
+
+	.portfolioItem:hover {
+		left:0;
+	}
+
+
+	.portfolioImage {
+		margin-right: 0;
+		margin-top: 40px;
+	}
+
+	.portfolioContainer .portfolioItem2 .portfolioImage { 
+		order: 1;
+	}
+
+	.portfolioContainer .portfolioItem2 .portfolioContent { 
+		order: 2;
+	}
+
+	.borderLeft {
+		right:0;
+	}
+
+	.borderRight {
+		left: 0;
+	}
+
+/*Form*/
+	.formFlex {
+		display: block;
+	}
+
+	input {
+		width:100%;
+	}
+
+	input[type=email] {
+		margin-left: 0px;
+	}
+
+
+}
+
