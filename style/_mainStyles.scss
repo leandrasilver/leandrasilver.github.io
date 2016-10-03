@@ -1,0 +1,408 @@
+
+/*========================About Me==========================*/
+/*=========================================================*/
+
+section.about {
+	border-bottom: 1px solid rgba(180,142,172,0.5);
+	position: relative;
+}
+
+	section.about::after {
+		border: 2px solid rgba(180,142,172,0.5);
+		bottom: -8px;
+		content: " ";
+		left: 0;
+		position: absolute;
+		right:0;
+		z-index: 2;
+	}
+
+.aboutImage {
+	flex:1 0 40%;
+	max-width: 500px;
+	min-width: 360px;
+	padding:30px;
+	position: relative;
+	z-index: 9;
+}
+
+.aboutContent {
+	background-color: rgba(201,197,203,0.2);
+	flex:2 1 60%;
+	left:-90px;
+	padding: 30px 30px 30px 90px;
+	position: relative;
+}
+
+/*========================Skills and Icons=================*/
+/*=========================================================*/
+
+section.skills {
+	background-image: linear-gradient(rgba(255,255,255,0.5), rgba(255,255,255,0.5)), url(../images/pw_maze_white.png);
+	background-repeat: repeat;
+}
+
+	.skills .skillContent {
+		align-items:center;
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+		.skillItem {
+			background-color: white;
+			border:5px double rgba(186,172,189,0.3);
+			flex: 0 1 10%;
+			margin: 10px;
+			padding:20px;
+			min-width:200px;
+			text-align: center;
+		}
+
+			.skillItem h3 {
+				text-align: center;
+			}
+
+.devicons, .fa {
+	color: rgba(186,172,189,1);
+	display: inline-block;
+	padding: 2%;
+	text-shadow: -2px -2px 0 rgba(199, 129, 232, 0.5);
+	transition: all 0.3s ease-in;
+}
+
+.devicons, .skills .fa-wheelchair, .skills .fa-plug {
+	font-size: 60px;
+}
+
+.devicons:hover, .fa:hover, .devicons:focus, .fa:focus {
+	color: rgba(199,129,232,0.6);
+	text-shadow: 2px 2px 0 rgba(186,172,189,1);
+}
+
+/*=======================Portfolio=========================*/
+/*=========================================================*/
+section.portfolio {
+	border-bottom: 1px solid rgba(180,142,172,0.5);
+	position: relative;
+}
+
+	section.portfolio::after {
+		border: 2px solid rgba(180,142,172,0.5);
+		bottom: -8px;
+		content: " ";
+		left: 0;
+		position: absolute;
+		right:0;
+		z-index: 2;
+	}
+
+.portfolioContainer {
+	align-items: flex-start;
+	display:flex;
+	flex-direction: column;
+	margin:0 auto;
+	max-width: 800px;
+}
+
+	.portfolioItem {
+		margin: 2%;
+	}
+	
+		.portfolioImage {
+			background: url(../images/macbookImageSm2.png) no-repeat;
+			flex:1 0 auto;
+			height: 161px;
+			padding:20px;
+			width: 300px;
+		}
+
+		.portfolioContent {
+			align-self: center;
+			padding: 25px;
+			position: relative;
+		}
+
+		.portfolioItem2 .portfolioImage { 
+			order: 2;
+		}
+
+		.portfolioItem2 .portfolioContent { 
+			order: 1;
+		}
+
+		.borderLeft {
+			margin-left: 5%;
+		}
+
+		.borderRight {
+			margin-right: 5%;
+		}
+
+			.borderLeft::before {
+				background:none;
+				border-left:2px solid rgba(180, 142, 174, 0.5);
+				border-right:5px solid rgba(180, 142, 174, 0.5);
+				content:" ";
+				display:block;
+				height:100%;
+				left:-10px;
+				position:absolute;
+				width:7px;
+				z-index: 10;
+				top:50%;
+				transform: translateY(-50%);
+			}
+
+			.borderRight::before {
+				background:none;
+				border-left:2px solid rgba(180, 142, 174, 0.5);
+				border-right:5px solid rgba(180, 142, 174, 0.5);
+				content:" ";
+				display:block;
+				height:100%;
+				position:absolute;
+				right:10px;
+				width:7px;
+				z-index: 10;
+				top:50%;
+				transform: translateY(-50%);
+			}
+
+/*=====================Form================================*/
+/*=========================================================*/
+
+section.contact {
+	background-color: rgba(186,172,189,1);
+}
+
+.contact h2 {
+	color: white;
+	text-align: center;
+	text-shadow: 2px 2px black;
+}
+
+.contact h3 {
+	color: white;
+	left:25px;
+	padding-top:50px;
+	position: relative;
+	text-align: center;
+	text-shadow: 1px 1px rgba(0,0,0,0.5);
+}
+
+.contactForm {
+	margin: 0 auto;
+	max-width: 800px;
+}
+
+	input {
+		flex: 1 1 45%;
+		font-size: 1.4rem;
+		margin-top:10px;
+		padding: 10px;
+	}
+
+	textarea {
+		font-size: 1.4rem;
+		margin: 10px auto;
+		max-height: 300px;
+		max-width: 100%;
+		min-width: 225px;
+		padding: 10px;
+		width: 100%;
+	}
+
+	.formFlex {
+		align-items: center;
+		display: flex;
+		justify-content: space-between;
+		width: 100%; /*so people cannot drag box to the right*/
+	}
+
+	input[type=email] {
+		margin-left: 10px;
+	}
+
+	input[type=submit] {
+		background-color: rgba(156,142,159,1);
+		border:3px double white;
+		color: white;
+		display: block;
+		font-size: 2rem;
+		margin: 10px auto;
+		width: 200px;
+	}
+
+	input, textarea {
+		border:5px double rgba(186,172,189,0.3);
+		color:rgba(100,110,104,0.8);
+	}
+
+	input:focus,textarea:focus,input:hover,textarea:hover {
+		border-bottom:5px double rgba(180,142,174,1);
+		outline: rgba(180,142,174,1);
+	}
+
+	input[type=submit]:hover {
+		border-bottom:3px double rgba(180,142,174,1);
+	}
+
+/*=====================Footer=============================*/
+/*=========================================================*/
+
+footer {
+	background: url(../images/pw_maze_white.png);
+	padding-top: 40px;
+	padding-bottom: 40px;
+}
+	footer .wrapper {
+		max-width: 800px;
+	}
+
+	footer .social {
+		padding-bottom: 20px;
+	}
+	
+	footer p{
+		margin:0;
+		padding: 2px;
+		font-size: 10px;
+		color: grey;
+	}
+
+/*=====================Breakpoints=========================*/
+/*=========================================================*/
+
+@media all and (max-width: 650px) {
+
+	.wrapper {
+		width:100%;
+	}
+
+	.sectionTitle{
+		width: 70%;
+		margin:0 auto;
+		padding-bottom:30px;
+	}
+
+	section.contact .wrapper {
+		width: 80%;
+	}
+
+	nav {
+		display: block;
+	}
+
+	.mainNav {
+		justify-content: flex-start;
+		padding-top:60px;
+	}
+
+	ul.mainNav li a {
+		padding: 5px;
+		font-size:1.3rem;
+	}
+
+	nav .logo {
+		position: fixed;
+		z-index: 30;
+	}
+/*About*/
+
+	section.about {
+		padding-top:0;
+		.sectionTitle {
+			padding-bottom: 5px
+		}
+	}
+
+	section.about .aboutBox {
+		display: block;
+	}
+
+	section.about .aboutImage {
+		width: 70%;
+		margin:0 auto;
+		img {
+			width: 100%;
+		}
+	}
+
+	section.about .aboutContent {
+		left:0;
+		width: 100%;
+		padding:10%;
+	}
+/*Skills*/
+
+.skillItem {
+	width:20%;
+	min-width:150px;
+}
+
+.skillItem h3{
+	font-size: 1.3rem;
+}
+/*Portfolio*/
+	.portfolioItem {
+		display: block;
+		text-align: center;
+		margin:0 auto;
+	}
+	
+
+	.portfolioItem h3 {
+		text-align:center;
+	}
+
+	.portfolioImage {
+		margin-right: 0;
+		margin-top: 40px;
+		margin:0 auto;
+	}
+
+	button {
+		margin:10px auto;
+		display: block;
+
+	}
+
+	.portfolioContainer .portfolioItem2 .portfolioImage { 
+		order: 1;
+	}
+
+	.portfolioContainer .portfolioItem2 .portfolioContent { 
+		order: 2;
+	}
+
+	.borderLeft {
+		width:100%;
+		margin-left:0;
+	}
+
+	.borderRight {
+		width: 100%;
+		margin-left:0;
+	}
+
+	.borderRight::before, .borderLeft::before {
+		height: 60%;
+		border-left: 2px solid rgba(218, 200, 216, 0.2);
+		border-right: 5px solid rgba(218, 200, 216, 0.2);
+	}
+
+/*Form*/
+	.formFlex {
+		display: block;
+	}
+
+	input {
+		width:100%;
+	}
+
+	input[type=email] {
+		margin-left: 0px;
+	}
+
+
+}
+
