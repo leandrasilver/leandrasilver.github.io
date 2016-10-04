@@ -7,7 +7,7 @@ html {
 }
 
 img {
-	width:100%;
+	max-width:100%;
 	display: block;
 }
 
@@ -98,4 +98,29 @@ button {
 	width: 70%;
 	max-width: 1180px;
 	margin: 0 auto;
+}
+
+.toTop {
+	position: absolute;
+	bottom:15px;
+	left:50%;
+	transform: translate(-50%, -50%);
+	a i {
+		font-size:40px;
+		color: white;
+		text-shadow:none;
+		&:hover {
+			color: white;
+		}
+	}
+}
+
+.toTopText {
+	position: absolute;
+	left: 50%;
+	bottom:10px;
+	width:60px;
+	text-align: center;
+	display:block;
+	transform: translate(-50%, -50%);
 }

@@ -172,7 +172,7 @@ html {
 }
 
 img {
-  width: 100%;
+  max-width: 100%;
   display: block;
 }
 
@@ -271,6 +271,37 @@ button h4 {
   margin: 0 auto;
 }
 
+.toTop {
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.toTop a i {
+  font-size: 40px;
+  color: white;
+  text-shadow: none;
+}
+
+.toTop a i:hover {
+  color: white;
+}
+
+.toTopText {
+  position: absolute;
+  left: 50%;
+  bottom: 10px;
+  width: 60px;
+  text-align: center;
+  display: block;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
 /*==================Header Style Begins====================*/
 /*=========================================================*/
 header {
@@ -320,9 +351,9 @@ nav {
 }
 
 ul.mainNav {
-  -webkit-flex-basis: 30%;
-      -ms-flex-preferred-size: 30%;
-          flex-basis: 30%;
+  -webkit-flex: 0 0 30%;
+      -ms-flex: 0 0 30%;
+          flex: 0 0 30%;
 }
 
 nav .logo {
@@ -339,9 +370,9 @@ ul.mainNav li {
   -webkit-align-self: center;
       -ms-flex-item-align: center;
           align-self: center;
-  -webkit-flex: 1 1 25%;
-      -ms-flex: 1 1 25%;
-          flex: 1 1 25%;
+  -webkit-flex: 0 0 25%;
+      -ms-flex: 0 0 25%;
+          flex: 0 0 25%;
   text-align: center;
   text-transform: uppercase;
   transition: all 0.3s ease-in;
@@ -547,6 +578,9 @@ section.skills {
   -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-align-content: center;
+      -ms-flex-line-pack: center;
+          align-content: center;
   -webkit-flex-wrap: wrap;
       -ms-flex-wrap: wrap;
           flex-wrap: wrap;
@@ -558,17 +592,18 @@ section.skills {
 .skillItem {
   background-color: white;
   border: 5px double rgba(186, 172, 189, 0.3);
-  -webkit-flex: 0 1 10%;
-      -ms-flex: 0 1 10%;
-          flex: 0 1 10%;
-  margin: 10px;
-  padding: 20px;
-  min-width: 200px;
+  -webkit-flex: 0 0 18%;
+      -ms-flex: 0 0 18%;
+          flex: 0 0 18%;
+  padding: 2%;
+  max-width: 150px;
+  min-width: 120px;
   text-align: center;
 }
 
 .skillItem h3 {
   text-align: center;
+  font-size: 1.2rem;
 }
 
 .devicons, .fa {
@@ -623,14 +658,14 @@ section.portfolio::after {
   margin: 2%;
 }
 
+.portfolioItem:first-child .portfolioImage {
+  border: 2px double rgba(186, 172, 189, 0.3);
+  box-shadow: 2px 2px 20px lightgrey;
+}
+
 .portfolioImage {
-  background: url(../images/macbookImageSm2.png) no-repeat;
-  -webkit-flex: 1 0 auto;
-      -ms-flex: 1 0 auto;
-          flex: 1 0 auto;
-  height: 161px;
-  padding: 20px;
-  width: 300px;
+  width: 40%;
+  min-width: 200px;
 }
 
 .portfolioContent {
@@ -699,6 +734,8 @@ section.portfolio::after {
 /*=========================================================*/
 section.contact {
   background-color: #baacbd;
+  position: relative;
+  padding-bottom: 50px;
 }
 
 .contact h2 {
@@ -733,7 +770,7 @@ input {
 textarea {
   font-size: 1.4rem;
   margin: 10px auto;
-  max-height: 300px;
+  max-height: 250px;
   max-width: 100%;
   min-width: 225px;
   padding: 10px;
@@ -766,6 +803,7 @@ input[type=submit] {
   font-size: 2rem;
   margin: 10px auto;
   width: 200px;
+  margin-bottom: 50px;
 }
 
 input, textarea {
@@ -851,7 +889,7 @@ footer p {
     margin: 0 auto;
   }
   section.about .aboutImage img {
-    width: 100%;
+    max-width: 100%;
   }
   section.about .aboutContent {
     left: 0;
@@ -859,9 +897,14 @@ footer p {
     padding: 10%;
   }
   /*Skills*/
+  section.skills {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
   .skillItem {
-    width: 20%;
-    min-width: 150px;
+    -webkit-flex: 0 0 20%;
+        -ms-flex: 0 0 20%;
+            flex: 0 0 20%;
   }
   .skillItem h3 {
     font-size: 1.3rem;
@@ -879,6 +922,7 @@ footer p {
     margin-right: 0;
     margin-top: 40px;
     margin: 0 auto;
+    width: 40%;
   }
   button {
     margin: 10px auto;
