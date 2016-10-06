@@ -351,9 +351,9 @@ nav {
 }
 
 ul.mainNav {
-  -webkit-flex: 0 0 30%;
-      -ms-flex: 0 0 30%;
-          flex: 0 0 30%;
+  -webkit-flex: 0 0 40%;
+      -ms-flex: 0 0 40%;
+          flex: 0 0 40%;
 }
 
 nav .logo {
@@ -596,8 +596,8 @@ section.skills {
       -ms-flex: 0 0 18%;
           flex: 0 0 18%;
   padding: 2%;
-  max-width: 150px;
-  min-width: 120px;
+  margin: 1%;
+  min-width: 150px;
   text-align: center;
 }
 
@@ -812,12 +812,12 @@ input, textarea {
 }
 
 input:focus, textarea:focus, input:hover, textarea:hover {
-  border-bottom: 5px double #b48eae;
+  border: 7px double #b48eae;
   outline: #b48eae;
 }
 
 input[type=submit]:hover {
-  border-bottom: 3px double #b48eae;
+  border: 7px double #b48eae;
 }
 
 /*=====================Footer=============================*/

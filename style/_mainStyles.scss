@@ -53,8 +53,8 @@ section.skills {
 			border:5px double rgba(186,172,189,0.3);
 			flex: 0 0 18%;
 			padding:2%;
-			max-width: 150px;
-			min-width: 120px;
+			margin:1%;
+			min-width:150px;
 			text-align: center;
 		}
 
@@ -247,12 +247,12 @@ section.contact {
 	}
 
 	input:focus,textarea:focus,input:hover,textarea:hover {
-		border-bottom:5px double rgba(180,142,174,1);
+		border:7px double rgba(180,142,174,1);
 		outline: rgba(180,142,174,1);
 	}
 
 	input[type=submit]:hover {
-		border-bottom:3px double rgba(180,142,174,1);
+		border:7px double rgba(180,142,174,1);
 	}
 
 /*=====================Footer=============================*/
