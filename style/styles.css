@@ -354,6 +354,12 @@ ul.mainNav {
   -webkit-flex: 0 0 40%;
       -ms-flex: 0 0 40%;
           flex: 0 0 40%;
+  -webkit-flex-basis: auto;
+      -ms-flex-preferred-size: auto;
+          flex-basis: auto;
+  -webkit-flex-shrink: 0;
+      -ms-flex-negative: 0;
+          flex-shrink: 0;
 }
 
 nav .logo {
@@ -386,7 +392,7 @@ ul.mainNav li:hover, ul.mainNav li:focus {
 }
 
 ul.mainNav li a {
-  color: #646e68;
+  color: #4f4f4d;
   display: inline-block;
   font-size: 1.5rem;
   padding: 10px 25px;
@@ -547,11 +553,11 @@ section.about::after {
 }
 
 .aboutImage {
-  -webkit-flex: 1 0 40%;
-      -ms-flex: 1 0 40%;
-          flex: 1 0 40%;
+  -webkit-flex: 1 1 40%;
+      -ms-flex: 1 1 40%;
+          flex: 1 1 40%;
   max-width: 500px;
-  min-width: 360px;
+  min-width: 320px;
   padding: 30px;
   position: relative;
   z-index: 9;
@@ -599,6 +605,9 @@ section.skills {
   margin: 1%;
   min-width: 150px;
   text-align: center;
+  -webkit-flex: 1 0 auto;
+      -ms-flex: 1 0 auto;
+          flex: 1 0 auto;
 }
 
 .skillItem h3 {
@@ -885,15 +894,19 @@ footer p {
     display: block;
   }
   section.about .aboutImage {
-    width: 70%;
+    width: 300px;
     margin: 0 auto;
+    min-width: 0;
   }
   section.about .aboutImage img {
-    max-width: 100%;
+    width: 100%;
   }
   section.about .aboutContent {
     left: 0;
-    width: 100%;
+    -webkit-flex-basis: 100%;
+        -ms-flex-preferred-size: 100%;
+            flex-basis: 100%;
+    max-width: 100%;
     padding: 10%;
   }
   /*Skills*/
@@ -902,9 +915,9 @@ footer p {
     padding-right: 10px;
   }
   .skillItem {
-    -webkit-flex: 0 0 20%;
-        -ms-flex: 0 0 20%;
-            flex: 0 0 20%;
+    -webkit-flex: 1 0 auto;
+        -ms-flex: 1 0 auto;
+            flex: 1 0 auto;
   }
   .skillItem h3 {
     font-size: 1.3rem;

@@ -41,6 +41,8 @@ header {
 
 		ul.mainNav {
 			flex: 0 0 40%;
+			flex-basis: auto;
+			flex-shrink: 0;
 		}
 
 		nav .logo {
@@ -68,7 +70,7 @@ header {
 			}
 
 		ul.mainNav li a {
-			color:rgba(100,110,104,1);
+			color:rgba(79,79,77,1);
 			display: inline-block;
 			font-size: 1.5rem;
 			padding:10px 25px;

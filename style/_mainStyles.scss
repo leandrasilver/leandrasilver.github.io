@@ -56,6 +56,7 @@ section.skills {
 			margin:1%;
 			min-width:150px;
 			text-align: center;
+			flex: 1 0 auto;
 		}
 
 			.skillItem h3 {
@@ -315,6 +316,7 @@ footer {
 		position: fixed;
 		z-index: 30;
 	}
+
 /*About*/
 
 	section.about {
@@ -329,31 +331,37 @@ footer {
 	}
 
 	section.about .aboutImage {
-		width: 70%;
+		width: 300px;
 		margin:0 auto;
+		min-width: 0;
 		img {
-			max-width: 100%;
+			width: 100%;
 		}
 	}
 
 	section.about .aboutContent {
 		left:0;
-		width: 100%;
+		flex-basis:100%;
+		max-width: 100%;
 		padding:10%;
 	}
+
 /*Skills*/
+
 section.skills {
 	padding-left:10px;
 	padding-right:10px;
 }
 
 .skillItem {
-	flex:0 0 20%;
+	// flex: 1 0 20%;
+	flex: 1 0 auto;
 }
 
 .skillItem h3{
 	font-size: 1.3rem;
 }
+
 /*Portfolio*/
 	.portfolioItem {
 		display: block;
