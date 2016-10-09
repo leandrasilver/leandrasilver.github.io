@@ -61,6 +61,9 @@ header {
 			text-align: center;
 			text-transform: uppercase;
 			transition: all 0.3s ease-in;
+			// when responsive the list items need to be above the SVG viewport
+			z-index:10;
+			
 		}
 
 			ul.mainNav li:hover, ul.mainNav li:focus {
