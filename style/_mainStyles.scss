@@ -297,6 +297,10 @@ footer {
 	section.contact .wrapper {
 		width: 80%;
 	}
+	
+	header h2 {
+		font-size:1.5rem;
+	}
 
 	nav {
 		display: block;
@@ -308,8 +312,8 @@ footer {
 	}
 
 	ul.mainNav li a {
-		padding: 5px;
-		font-size:1.3rem;
+		padding: 3px;
+		font-size:1.1rem;
 	}
 
 	nav .logo {
@@ -348,19 +352,19 @@ footer {
 
 /*Skills*/
 
-section.skills {
-	padding-left:10px;
-	padding-right:10px;
-}
+	section.skills {
+		padding-left:10px;
+		padding-right:10px;
+	}
 
-.skillItem {
-	// flex: 1 0 20%;
-	flex: 1 0 auto;
-}
+	.skillItem {
+		// flex: 1 0 20%;
+		flex: 1 0 auto;
+	}
 
-.skillItem h3{
-	font-size: 1.3rem;
-}
+	.skillItem h3{
+		font-size: 1.3rem;
+	}
 
 /*Portfolio*/
 	.portfolioItem {
@@ -384,7 +388,6 @@ section.skills {
 	button {
 		margin:10px auto;
 		display: block;
-
 	}
 
 	.portfolioContainer .portfolioItem2 .portfolioImage { 
@@ -424,6 +427,62 @@ section.skills {
 		margin-left: 0px;
 	}
 
-
 }
 
+/* Landscape styles */ // h2 in the header, floats on top of SVG when in landscape mode, following code is to fix it.
+
+/* ----------- iPhone 4 and 4S ----------- */
+
+/* Landscape */
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 480px)
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: landscape) {
+  	header h2{
+  		font-size:1rem;
+  		top:68%;
+  	}
+}
+
+/* ----------- iPhone 5 and 5S ----------- */
+
+/* Landscape */
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 568px)
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: landscape) {
+	header h2{
+		font-size:1rem;
+		top:68%;
+	}
+}
+
+/* ----------- iPhone 6 ----------- */
+
+/* Landscape */
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 667px) 
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: landscape) { 
+	header h2{
+		font-size:1rem;
+		top:68%;
+	}
+}
+
+/* ----------- iPhone 6+ ----------- */
+
+/* Landscape */
+@media only screen 
+  and (min-device-width: 414px) 
+  and (max-device-width: 736px) 
+  and (-webkit-min-device-pixel-ratio: 3)
+  and (orientation: landscape) { 
+	header h2{
+		font-size:1rem;
+		top:68%;
+	}
+}

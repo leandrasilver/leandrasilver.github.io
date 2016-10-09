@@ -84,11 +84,6 @@ header {
 			    transition: width .5s ease;
 			    width: 0px;
 			}
-			
-			ul.mainNav li a:hover, ul.mainNav li a:focus {
-				color:rgba(180, 142, 174, 1);
-
-			}
 
 			    ul.mainNav li a:hover::after, ul.mainNav li a:focus::after {
 				    border-bottom: 4px double rgba(180, 142, 174, 1);

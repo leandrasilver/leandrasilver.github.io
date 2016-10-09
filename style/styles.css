@@ -407,10 +407,6 @@ ul.mainNav li a::after {
   width: 0px;
 }
 
-ul.mainNav li a:hover, ul.mainNav li a:focus {
-  color: #b48eae;
-}
-
 ul.mainNav li a:hover::after, ul.mainNav li a:focus::after {
   border-bottom: 4px double #b48eae;
   border-top: 1px double white;
@@ -553,11 +549,11 @@ section.about::after {
 }
 
 .aboutImage {
-  -webkit-flex: 1 1 40%;
-      -ms-flex: 1 1 40%;
-          flex: 1 1 40%;
+  -webkit-flex: 1 0 40%;
+      -ms-flex: 1 0 40%;
+          flex: 1 0 40%;
   max-width: 500px;
-  min-width: 320px;
+  min-width: 360px;
   padding: 30px;
   position: relative;
   z-index: 9;
@@ -866,6 +862,9 @@ footer p {
   section.contact .wrapper {
     width: 80%;
   }
+  header h2 {
+    font-size: 1.5rem;
+  }
   nav {
     display: block;
   }
@@ -876,8 +875,8 @@ footer p {
     padding-top: 60px;
   }
   ul.mainNav li a {
-    padding: 5px;
-    font-size: 1.3rem;
+    padding: 3px;
+    font-size: 1.1rem;
   }
   nav .logo {
     position: fixed;
@@ -973,5 +972,43 @@ footer p {
   }
   input[type=email] {
     margin-left: 0px;
+  }
+}
+
+/* Landscape */
+/* ----------- iPhone 4 and 4S ----------- */
+/* Landscape */
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
+  header h2 {
+    font-size: 1rem;
+    top: 68%;
+  }
+}
+
+/* ----------- iPhone 5 and 5S ----------- */
+/* Landscape */
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
+  header h2 {
+    font-size: 1rem;
+    top: 68%;
+  }
+}
+
+/* ----------- iPhone 6 ----------- */
+/* Landscape */
+@media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
+  header h2 {
+    font-size: 1rem;
+    top: 68%;
+  }
+}
+
+/* ----------- iPhone 6+ ----------- */
+/* Landscape */
+@media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (-webkit-min-device-pixel-ratio: 3) and (orientation: landscape) {
+  header h2 {
+    font-size: 1rem;
+    color: red;
+    top: 68%;
   }
 }
