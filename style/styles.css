@@ -382,6 +382,7 @@ ul.mainNav li {
   text-align: center;
   text-transform: uppercase;
   transition: all 0.3s ease-in;
+  z-index: 10;
 }
 
 ul.mainNav li:hover, ul.mainNav li:focus {
@@ -418,6 +419,7 @@ ul.mainNav li a:hover::after, ul.mainNav li a:focus::after {
 /*========================SVG CSS==========================*/
 /*=========================================================*/
 svg {
+  pointer-events: none;
   background: transparent;
   max-width: 800px;
   min-width: 200px;
@@ -427,6 +429,7 @@ svg {
   -webkit-transform: translate(-50%, -50%);
       -ms-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
+  z-index: 0;
 }
 
 .text {
@@ -567,6 +570,11 @@ section.about::after {
   left: -90px;
   padding: 30px 30px 30px 90px;
   position: relative;
+  min-width: 300px;
+}
+
+.social {
+  margin-top: 40px;
 }
 
 /*========================Skills and Icons=================*/
@@ -663,12 +671,9 @@ section.portfolio::after {
   margin: 2%;
 }
 
-.portfolioItem:first-child .portfolioImage {
+.portfolioImage {
   border: 2px double rgba(186, 172, 189, 0.3);
   box-shadow: 2px 2px 20px lightgrey;
-}
-
-.portfolioImage {
   width: 40%;
   min-width: 200px;
 }
@@ -975,7 +980,7 @@ footer p {
   }
 }
 
-/* Landscape */
+/* Landscape styles */
 /* ----------- iPhone 4 and 4S ----------- */
 /* Landscape */
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
@@ -1008,7 +1013,6 @@ footer p {
 @media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (-webkit-min-device-pixel-ratio: 3) and (orientation: landscape) {
   header h2 {
     font-size: 1rem;
-    color: red;
     top: 68%;
   }
 }

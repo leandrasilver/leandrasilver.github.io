@@ -32,6 +32,12 @@ section.about {
 	left:-90px;
 	padding: 30px 30px 30px 90px;
 	position: relative;
+	// Needs a min-width, or else in safari the container will shrink too much and content will bleed out and get too skinny and have a long height
+	min-width: 300px;
+}
+
+.social {
+	margin-top: 40px;
 }
 
 /*========================Skills and Icons=================*/
@@ -107,17 +113,13 @@ section.portfolio {
 
 }
 
-
 	.portfolioItem {
 		margin: 2%;
-		&:first-child .portfolioImage{
-			border: 2px double rgba(186,172,189,0.3);
-			box-shadow: 2px 2px 20px lightgrey;
-		}
 	}
 	
 		.portfolioImage {
-			// border: 2px double rgba(186,172,189,0.3);
+			border: 2px double rgba(186,172,189,0.3);
+			box-shadow: 2px 2px 20px lightgrey;
 			width: 40%;
 			min-width:200px;
 		}
