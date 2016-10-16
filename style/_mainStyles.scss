@@ -104,6 +104,10 @@ section.portfolio {
 		z-index: 2;
 	}
 
+.portfolioItem a {
+	color:rgba(180,142,172,0.5);
+}
+
 .portfolioContainer {
 	align-items: flex-start;
 	display:flex;
