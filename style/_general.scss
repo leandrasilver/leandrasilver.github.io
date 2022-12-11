@@ -12,7 +12,7 @@ img {
 }
 
 a {
-	text-decoration:none;
+	text-decoration: none;
 	color: inherit;
 }
 
@@ -62,8 +62,8 @@ p {
 	font-size: 1.4rem;
 	font-family: "Open Sans", sans-serif;
 	a {
-		color:rgba(180, 142, 174, 1);
-		text-decoration: underline;
+		color:rgba(180, 142, 174, 1) !important;
+		text-decoration: underline !important;
 	}
 }
 
