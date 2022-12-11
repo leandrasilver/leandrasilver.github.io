@@ -1016,3 +1016,8 @@ footer p {
     top: 68%;
   }
 }
+
+.link {
+	color:rgba(180, 142, 174, 1) !important;
+	text-decoration: underline !important;
+}
