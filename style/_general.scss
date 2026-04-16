@@ -16,6 +16,39 @@ a {
 	color: inherit;
 }
 
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+	outline: 3px solid rgba(47,72,88,1);
+	outline-offset: 3px;
+}
+
+.skipLink {
+	background: rgba(47,72,88,1);
+	color: white;
+	left: 10px;
+	padding: 8px 12px;
+	position: absolute;
+	top: -50px;
+	z-index: 1000;
+}
+
+.skipLink:focus {
+	top: 10px;
+}
+
+.visuallyHidden {
+	border: 0;
+	clip: rect(0 0 0 0);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	width: 1px;
+}
+
 ul {
 	list-style: none;
 	padding-left: 0;
@@ -64,8 +97,16 @@ p {
 }
 
 .link {
-	color:rgba(180, 142, 174, 1) !important;
+	color:rgba(109, 72, 103, 1) !important;
 	text-decoration: underline !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	*, *::before, *::after {
+		animation: none !important;
+		scroll-behavior: auto !important;
+		transition: none !important;
+	}
 }
 
 section {

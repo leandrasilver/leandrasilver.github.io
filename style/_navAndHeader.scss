@@ -60,7 +60,8 @@ header {
 			flex: 0 0 25%;
 			text-align: center;
 			text-transform: uppercase;
-			transition: all 0.3s ease-in;
+			transition: color 0.25s ease, transform 0.25s ease;
+			transform: translateZ(0);
 			// when responsive the list items need to be above the SVG viewport
 			z-index:10;
 			
@@ -68,7 +69,7 @@ header {
 
 			ul.mainNav li:hover, ul.mainNav li:focus {
 				color: rgba(180, 142, 174, 1);
-				transform: scale(1.2,1.2);
+				transform: translateZ(0) scale(1.04);
 
 			}
 
@@ -77,23 +78,29 @@ header {
 			display: inline-block;
 			font-size: 1.5rem;
 			padding:10px 25px;
+			position: relative;
 		}
 
 			ul.mainNav li a::after {
 			    background: transparent;
+			    border-top: 1px double white;
+			    border-bottom: 4px double rgba(180, 142, 174, 1);
 			    content: '';
 			    display: block;
-			    margin: 0 auto;
-			    transition: width .5s ease;
-			    width: 0px;
+			    height: 6px;
+			    left: 50%;
+			    opacity: 0;
+			    position: absolute;
+			    bottom: 2px;
+			    transform: translateX(-50%) scaleX(0);
+			    transform-origin: center;
+			    transition: transform 0.2s ease, opacity 0.2s ease;
+			    width: calc(100% - 24px);
 			}
 
 			    ul.mainNav li a:hover::after, ul.mainNav li a:focus::after {
-				    border-bottom: 4px double rgba(180, 142, 174, 1);
-				    border-top:1px double white;
-				    font-weight: 600;
-				    max-width: 90px;
-				    width: 100%;
+				    opacity: 1;
+				    transform: translateX(-50%) scaleX(1);
 				}
 
 	/*========================SVG CSS==========================*/
@@ -174,6 +181,16 @@ header {
 	position:relative;
 }
 
+.sectionTitle h2,
+.sectionTitle2 h2 {
+	transition: color 0.25s ease, letter-spacing 0.25s ease;
+}
+
+.sectionTitle h2 strong,
+.sectionTitle2 h2 strong {
+	transition: color 0.25s ease;
+}
+
 	.sectionTitle h3 span::before {
 		content:" ";
 		display:block;
@@ -186,6 +203,7 @@ header {
 		top:30%;
 		left:-50px;
 		z-index: 10;
+		transition: width 0.25s ease, left 0.25s ease;
 	}
 
 	/*for Form section vertical double bar*/
@@ -202,4 +220,38 @@ header {
 		left:-20px;
 		bottom:10px;
 		z-index: 10;
+		transition: height 0.25s ease, left 0.25s ease;
 	}
+
+.sectionTitle:hover h2,
+.sectionTitle:focus-within h2,
+.sectionTitle.is-visible h2,
+.sectionTitle2:hover h2,
+.sectionTitle2:focus-within h2,
+.sectionTitle2.is-visible h2 {
+	color: rgba(79,79,77,1);
+	letter-spacing: 2px;
+}
+
+.sectionTitle:hover h2 strong,
+.sectionTitle:focus-within h2 strong,
+.sectionTitle.is-visible h2 strong,
+.sectionTitle2:hover h2 strong,
+.sectionTitle2:focus-within h2 strong,
+.sectionTitle2.is-visible h2 strong {
+	color: rgba(156,111,149,1);
+}
+
+.sectionTitle:hover h3 span::before,
+.sectionTitle:focus-within h3 span::before,
+.sectionTitle.is-visible h3 span::before {
+	width: 58px;
+	left: -68px;
+}
+
+.sectionTitle2:hover h3 span::before,
+.sectionTitle2:focus-within h3 span::before,
+.sectionTitle2.is-visible h3 span::before {
+	height: 92px;
+	left: -24px;
+}

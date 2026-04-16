@@ -265,7 +265,7 @@ section {
 button {
   border: 1px solid rgba(180, 142, 174, 0.2);
   border-bottom: 4px double #b48eae;
-  background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url(../images/pw_maze_white.png);
+  background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url(/images/pw_maze_white.png);
   padding: 8px 20px;
   font-size: 1.4rem;
   margin: 5px;
@@ -335,13 +335,41 @@ button h4 {
 /*==================Header Style Begins====================*/
 /*=========================================================*/
 header {
-  background-image: linear-gradient(rgba(199, 129, 232, 0.2) 10%, rgba(255, 255, 255, 0.9) 45%, rgba(255, 255, 255, 0.9) 65%, rgba(255, 255, 255, 0.7) 90%), url(../images/headerImage.jpg);
+  background-image: linear-gradient(rgba(199, 129, 232, 0.2) 10%, rgba(255, 255, 255, 0.9) 45%, rgba(255, 255, 255, 0.9) 65%, rgba(255, 255, 255, 0.7) 90%), url(/images/headerImage.jpg);
   /*background I stuck with*/
   background-repeat: repeat;
   background-size: cover;
   height: 100vh;
+  overflow: hidden;
   padding-top: 0;
   position: relative;
+}
+
+@property --aurora-angle {
+  syntax: '<angle>';
+  inherits: false;
+  initial-value: 0deg;
+}
+
+header::before {
+  background: conic-gradient(from var(--aurora-angle), rgba(180, 142, 174, 0.16), rgba(186, 172, 189, 0.08), rgba(255, 255, 255, 0), rgba(180, 142, 174, 0.16));
+  content: "";
+  height: 130%;
+  left: -10%;
+  pointer-events: none;
+  position: absolute;
+  top: -15%;
+  width: 120%;
+  z-index: 1;
+  -webkit-filter: blur(18px);
+          filter: blur(18px);
+  -webkit-animation: auroraDrift 18s linear infinite;
+          animation: auroraDrift 18s linear infinite;
+}
+
+header > * {
+  position: relative;
+  z-index: 2;
 }
 
 header h1 {
@@ -353,11 +381,22 @@ header h1 {
 
 header h2 {
   line-height: 1;
+  opacity: 0;
   position: absolute;
   text-align: center;
   top: 62%;
   font-size: 2rem;
   left: 50%;
+  -webkit-transform: translate(-50%, -42%);
+      -ms-transform: translate(-50%, -42%);
+          transform: translate(-50%, -42%);
+  transition: opacity 0.7s ease, -webkit-transform 0.7s ease;
+  transition: opacity 0.7s ease, transform 0.7s ease;
+  transition: opacity 0.7s ease, transform 0.7s ease, -webkit-transform 0.7s ease;
+}
+
+header.is-animated h2 {
+  opacity: 1;
   -webkit-transform: translate(-50%, -50%);
       -ms-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
@@ -496,8 +535,14 @@ svg {
   stroke-dasharray: 900;
   stroke-linecap: butt;
   stroke-linejoin: round;
-  -webkit-animation: dash 2.5s ease-in-out forwards;
-          animation: dash 2.5s ease-in-out forwards;
+  -webkit-animation: none;
+          animation: none;
+  will-change: stroke-dashoffset;
+}
+
+header.is-animated .text-stroke {
+  -webkit-animation: dash 3.2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+          animation: dash 3.2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
 
 .text-stroke:nth-child(2) {
@@ -545,6 +590,42 @@ svg {
   }
 }
 
+@-webkit-keyframes auroraDrift {
+  0% {
+    --aurora-angle: 0deg;
+    -webkit-transform: translate3d(0, 0, 0) scale(1);
+            transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    --aurora-angle: 180deg;
+    -webkit-transform: translate3d(0, -2%, 0) scale(1.02);
+            transform: translate3d(0, -2%, 0) scale(1.02);
+  }
+  100% {
+    --aurora-angle: 360deg;
+    -webkit-transform: translate3d(0, 0, 0) scale(1);
+            transform: translate3d(0, 0, 0) scale(1);
+  }
+}
+
+@keyframes auroraDrift {
+  0% {
+    --aurora-angle: 0deg;
+    -webkit-transform: translate3d(0, 0, 0) scale(1);
+            transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    --aurora-angle: 180deg;
+    -webkit-transform: translate3d(0, -2%, 0) scale(1.02);
+            transform: translate3d(0, -2%, 0) scale(1.02);
+  }
+  100% {
+    --aurora-angle: 360deg;
+    -webkit-transform: translate3d(0, 0, 0) scale(1);
+            transform: translate3d(0, 0, 0) scale(1);
+  }
+}
+
 /*End SVG CSS*/
 /*======Section Titles With before elements================*/
 /*=========================================================*/
@@ -554,11 +635,11 @@ svg {
 }
 
 .sectionTitle h2, .sectionTitle2 h2 {
-  transition: color 0.25s ease, letter-spacing 0.25s ease;
+  transition: color 0.65s ease, letter-spacing 0.65s ease, text-shadow 0.65s ease;
 }
 
 .sectionTitle h2 strong, .sectionTitle2 h2 strong {
-  transition: color 0.25s ease;
+  transition: color 0.65s ease;
 }
 
 .sectionTitle h3 span::before {
@@ -573,7 +654,7 @@ svg {
   top: 30%;
   left: -50px;
   z-index: 10;
-  transition: width 0.25s ease, left 0.25s ease;
+  transition: width 0.7s ease, left 0.7s ease;
 }
 
 /*for Form section vertical double bar*/
@@ -589,26 +670,27 @@ svg {
   left: -20px;
   bottom: 10px;
   z-index: 10;
-  transition: height 0.25s ease, left 0.25s ease;
+  transition: height 0.7s ease, left 0.7s ease;
 }
 
 .sectionTitle:hover h2, .sectionTitle:focus-within h2, .sectionTitle.is-visible h2, .sectionTitle2:hover h2, .sectionTitle2:focus-within h2, .sectionTitle2.is-visible h2 {
-  color: #4f4f4d;
-  letter-spacing: 2px;
+  color: #3f4a44;
+  letter-spacing: 4px;
+  text-shadow: 1px 1px 0 rgba(180, 142, 174, 0.25);
 }
 
 .sectionTitle:hover h2 strong, .sectionTitle:focus-within h2 strong, .sectionTitle.is-visible h2 strong, .sectionTitle2:hover h2 strong, .sectionTitle2:focus-within h2 strong, .sectionTitle2.is-visible h2 strong {
-  color: #9c6f95;
+  color: #8f5a87;
 }
 
 .sectionTitle:hover h3 span::before, .sectionTitle:focus-within h3 span::before, .sectionTitle.is-visible h3 span::before {
-  width: 58px;
-  left: -68px;
+  width: 78px;
+  left: -88px;
 }
 
 .sectionTitle2:hover h3 span::before, .sectionTitle2:focus-within h3 span::before, .sectionTitle2.is-visible h3 span::before {
-  height: 92px;
-  left: -24px;
+  height: 112px;
+  left: -30px;
 }
 
 /*========================About Me==========================*/
@@ -636,7 +718,24 @@ section.about::after {
   min-width: 360px;
   padding: 30px;
   position: relative;
+  isolation: isolate;
   z-index: 9;
+}
+
+.aboutImage img {
+  -webkit-mask-image: radial-gradient(ellipse 92% 92% at 50% 50%, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 0.88) 64%, rgba(0, 0, 0, 0.58) 78%, rgba(0, 0, 0, 0.2) 90%, transparent 100%);
+  mask-image: radial-gradient(ellipse 92% 92% at 50% 50%, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 0.88) 64%, rgba(0, 0, 0, 0.58) 78%, rgba(0, 0, 0, 0.2) 90%, transparent 100%);
+  filter: drop-shadow(0 0 22px rgba(201, 197, 203, 0.95));
+  transform: scale(1.02);
+}
+
+.aboutImage::after {
+  background: radial-gradient(ellipse 88% 88% at 50% 50%, transparent 58%, rgba(236, 235, 238, 0.45) 78%, rgba(236, 235, 238, 0.88) 100%);
+  content: "";
+  inset: 30px;
+  pointer-events: none;
+  position: absolute;
+  z-index: 2;
 }
 
 .aboutContent {
@@ -657,7 +756,7 @@ section.about::after {
 /*========================Skills and Icons=================*/
 /*=========================================================*/
 section.skills {
-  background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url(../images/pw_maze_white.png);
+  background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url(/images/pw_maze_white.png);
   background-repeat: repeat;
 }
 
@@ -682,41 +781,34 @@ section.skills {
 }
 
 .skills .skillContent {
-  -webkit-align-items: stretch;
-      -ms-flex-align: stretch;
-          align-items: stretch;
-  -webkit-align-content: flex-start;
-      -ms-flex-line-pack: start;
-          align-content: flex-start;
-  -webkit-flex-wrap: wrap;
-      -ms-flex-wrap: wrap;
-          flex-wrap: wrap;
-  -webkit-justify-content: flex-start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
+  display: grid;
+  gap: 8px;
+  grid-template-columns: repeat(auto-fit, minmax(118px, 1fr));
+  width: 100%;
 }
 
 .skillItem {
   background-color: white;
   border: 5px double rgba(186, 172, 189, 0.3);
-  -webkit-flex: 0 0 calc(25% - 8px);
-      -ms-flex: 0 0 calc(25% - 8px);
-          flex: 0 0 calc(25% - 8px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 116px;
   padding: 14px 8px;
-  margin: 4px;
-  min-width: 110px;
+  margin: 0;
   text-align: center;
 }
 
 .skillItem img {
-  height: 40px;
+  height: 38px;
   margin: 0 auto 8px auto;
-  width: 40px;
+  width: 38px;
 }
 
 .skillItem i {
   display: block;
-  font-size: 40px;
+  font-size: 3.8rem;
   margin: 0 auto 8px auto;
   padding: 0;
   text-shadow: none;
@@ -739,7 +831,23 @@ section.skills {
   text-transform: none;
 }
 
-.devicons, .fa {
+.skills .skillItem img,
+.skills .skillItem i,
+.skills .skillItem .textIcon {
+  filter: brightness(0) saturate(100%) invert(65%) sepia(10%) saturate(633%) hue-rotate(258deg) brightness(88%) contrast(85%) drop-shadow(1px 1px 0 rgba(255, 255, 255, 0.55)) drop-shadow(2px 2px 0 rgba(180, 142, 174, 0.25));
+  transition: filter 0.55s ease;
+}
+
+.skills .skillItem:hover img,
+.skills .skillItem:hover i,
+.skills .skillItem:hover .textIcon,
+.skills .skillItem:focus-within img,
+.skills .skillItem:focus-within i,
+.skills .skillItem:focus-within .textIcon {
+  filter: brightness(0) saturate(100%) invert(62%) sepia(18%) saturate(836%) hue-rotate(258deg) brightness(92%) contrast(90%) drop-shadow(2px 2px 0 rgba(255, 255, 255, 0.85)) drop-shadow(4px 4px 0 rgba(186, 172, 189, 0.9));
+}
+
+.social .devicons, .social .fa {
   color: #baacbd;
   display: inline-block;
   padding: 2%;
@@ -747,11 +855,12 @@ section.skills {
   transition: all 0.3s ease-in;
 }
 
-.devicons, .skills .fa-wheelchair, .skills .fa-plug {
-  font-size: 60px;
+.social .devicons, .social .fa {
+  font-size: 24px !important;
+  line-height: 1;
 }
 
-.devicons:hover, .fa:hover, .devicons:focus, .fa:focus {
+.social .devicons:hover, .social .fa:hover, .social .devicons:focus, .social .fa:focus {
   color: rgba(199, 129, 232, 0.6);
   text-shadow: 2px 2px 0 #baacbd;
 }
@@ -799,6 +908,25 @@ section.portfolio::after {
   position: relative;
 }
 
+.projectNote {
+  color: #6d4867;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  margin-top: 12px;
+  text-transform: uppercase;
+}
+
+.projectNoteButtonLike {
+  background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url(/images/pw_maze_white.png);
+  border: 1px solid rgba(180, 142, 174, 0.2);
+  border-bottom: 4px double #b48eae;
+  display: inline-block;
+  font-size: 1.4rem;
+  margin: 5px 0 0 0;
+  padding: 8px 20px;
+  word-break: keep-all;
+}
+
 .portfolioItem2 .portfolioContent {
   -webkit-order: 1;
       -ms-flex-order: 1;
@@ -834,6 +962,12 @@ section.contact {
   position: relative;
   text-align: center;
   text-shadow: 1px 1px rgba(0, 0, 0, 0.5);
+}
+
+.contact .sectionTitle2:hover h2,
+.contact .sectionTitle2:focus-within h2,
+.contact .sectionTitle2.is-visible h2 {
+  color: white;
 }
 
 .contactForm {
@@ -908,7 +1042,7 @@ input[type=submit]:hover {
 /*=====================Footer=============================*/
 /*=========================================================*/
 footer {
-  background: url(../images/pw_maze_white.png);
+  background: url(/images/pw_maze_white.png);
   padding-top: 40px;
   padding-bottom: 40px;
 }
@@ -993,13 +1127,11 @@ footer p {
     padding-left: 10px;
     padding-right: 10px;
   }
-  .skillItem {
-    -webkit-flex: 0 0 calc(50% - 8px);
-        -ms-flex: 0 0 calc(50% - 8px);
-            flex: 0 0 calc(50% - 8px);
-  }
   .skills .skillGroups {
     grid-template-columns: 1fr;
+  }
+  .skills .skillContent {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
   .skillItem h4 {
     font-size: 1.3rem;

@@ -48,26 +48,72 @@ section.skills {
 	background-repeat: repeat;
 }
 
-	.skills .skillContent {
-		align-items:center;
-		align-content:center;
-		flex-wrap: wrap;
-		justify-content: center;
+	.skills .skillGroups {
+		display: grid;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		grid-gap: 18px;
 	}
+
+	.skills .skillGroup {
+		background-color: rgba(255,255,255,0.95);
+		border:4px double rgba(186,172,189,0.35);
+		padding:20px;
+	}
+
+	.skills .groupTitle {
+		border-bottom:2px solid rgba(180,142,174,0.4);
+		font-size:2.1rem;
+		margin-bottom:14px;
+		padding-bottom:8px;
+		text-transform: uppercase;
+	}
+
+	.skills .skillContent {
+		align-items:stretch;
+		align-content:flex-start;
+		flex-wrap: wrap;
+		justify-content: flex-start;
+	}
+
 		.skillItem {
 			background-color: white;
 			border:5px double rgba(186,172,189,0.3);
-			flex: 0 0 18%;
-			padding:2%;
-			margin:1%;
-			min-width:150px;
+			flex: 0 0 calc(25% - 8px);
+			padding:14px 8px;
+			margin:4px;
+			min-width:110px;
 			text-align: center;
-			flex: 1 0 auto;
 		}
 
-			.skillItem h3 {
+			.skillItem img {
+				height: 40px;
+				margin: 0 auto 8px auto;
+				width: 40px;
+			}
+
+			.skillItem i {
+				display: block;
+				font-size: 40px;
+				margin: 0 auto 8px auto;
+				padding: 0;
+				text-shadow: none;
+			}
+
+			.skillItem .textIcon {
+				color: rgba(93,111,130,1);
+				display: block;
+				font-size: 3.4rem;
+				font-weight: 700;
+				letter-spacing: 1px;
+				line-height: 40px;
+				margin: 0 auto 8px auto;
+			}
+
+			.skillItem h4 {
 				text-align: center;
-				font-size: 1.2rem;
+				font-size: 1.1rem;
+				line-height: 1.3;
+				text-transform: none;
 			}
 
 .devicons, .fa {
@@ -118,24 +164,15 @@ section.portfolio {
 }
 
 	.portfolioItem {
+		background-color: rgba(255,255,255,0.9);
+		border:4px double rgba(186,172,189,0.35);
 		margin: 2%;
+		width: 100%;
 	}
-	
-		.portfolioImage {
-			border: 2px double rgba(186,172,189,0.3);
-			box-shadow: 2px 2px 20px lightgrey;
-			width: 40%;
-			min-width:200px;
-		}
 
 		.portfolioContent {
-			align-self: center;
-			padding: 25px;
+			padding: 20px 25px;
 			position: relative;
-		}
-
-		.portfolioItem2 .portfolioImage { 
-			order: 2;
 		}
 
 		.portfolioItem2 .portfolioContent { 
@@ -143,42 +180,12 @@ section.portfolio {
 		}
 
 		.borderLeft {
-			margin-left: 5%;
+			margin-left: 0;
 		}
 
 		.borderRight {
-			margin-right: 5%;
+			margin-right: 0;
 		}
-
-			.borderLeft::before {
-				background:none;
-				border-left:2px solid rgba(180, 142, 174, 0.5);
-				border-right:5px solid rgba(180, 142, 174, 0.5);
-				content:" ";
-				display:block;
-				height:100%;
-				left:-10px;
-				position:absolute;
-				width:7px;
-				z-index: 10;
-				top:50%;
-				transform: translateY(-50%);
-			}
-
-			.borderRight::before {
-				background:none;
-				border-left:2px solid rgba(180, 142, 174, 0.5);
-				border-right:5px solid rgba(180, 142, 174, 0.5);
-				content:" ";
-				display:block;
-				height:100%;
-				position:absolute;
-				right:10px;
-				width:7px;
-				z-index: 10;
-				top:50%;
-				transform: translateY(-50%);
-			}
 
 /*=====================Form================================*/
 /*=========================================================*/
@@ -251,15 +258,17 @@ section.contact {
 	input, textarea {
 		border:5px double rgba(186,172,189,0.3);
 		color:rgba(100,110,104,0.8);
+		transition: border-color 0.25s ease, box-shadow 0.25s ease;
 	}
 
 	input:focus,textarea:focus,input:hover,textarea:hover {
-		border:7px double rgba(180,142,174,1);
+		border:5px double rgba(180,142,174,1);
+		box-shadow: 0 0 0 2px rgba(180,142,174,0.2);
 		outline: rgba(180,142,174,1);
 	}
 
 	input[type=submit]:hover {
-		border:7px double rgba(180,142,174,1);
+		border:3px double rgba(180,142,174,1);
 	}
 
 /*=====================Footer=============================*/
@@ -364,11 +373,14 @@ footer {
 	}
 
 	.skillItem {
-		// flex: 1 0 20%;
-		flex: 1 0 auto;
+		flex: 0 0 calc(50% - 8px);
 	}
 
-	.skillItem h3{
+	.skills .skillGroups {
+		grid-template-columns: 1fr;
+	}
+
+	.skillItem h4{
 		font-size: 1.3rem;
 	}
 
