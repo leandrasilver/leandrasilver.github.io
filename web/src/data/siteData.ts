@@ -72,24 +72,9 @@ export const skillCategories: SkillCategory[] = [
 
 export const projects: Project[] = [
   {
-    title: 'Multi-Tenant Onboarding Platform',
+    title: 'Multi-Tenant and Enterprise Onboarding Initiatives',
     description:
-      'Led delivery across core backend services powering onboarding workflows for a scalable multi-tenant investment platform, with a focus on reliability and cross-service alignment.',
-  },
-  {
-    title: 'Enterprise Onboarding Experience',
-    description:
-      'Directed frontend delivery for a national onboarding initiative, partnering with backend teams and production stakeholders to optimize funnel performance through data-informed iteration.',
-  },
-  {
-    title: 'halifax.ca Accessibility Modernization',
-    description:
-      'Implemented accessibility and UX improvements for municipal digital services, helping modernize navigation patterns and content structure for inclusive public access.',
-  },
-  {
-    title: 'ttc.ca Accessibility Upgrade',
-    description:
-      'Contributed to accessibility-focused frontend modernization on a high-traffic transit platform, supporting WCAG and AODA compliance under tight delivery timelines.',
+      'Delivered backend and frontend onboarding workflows across multi-tenant investment and enterprise initiatives, improving reliability, cross-service alignment, and funnel performance through data-informed iteration.',
   },
 ]
 
